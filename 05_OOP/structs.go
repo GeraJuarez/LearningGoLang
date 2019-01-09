@@ -4,6 +4,7 @@ import "fmt"
 
 // Struct syntax: type Name strinc { fieldName fieldType ...}
 
+// Trade comment to shut linter
 type Trade struct {
 	Symbol string
 	Volume int
@@ -14,6 +15,8 @@ type Trade struct {
 // method for structs:
 // same as a function but with a recevier (pointer of the object)
 // func (pointer of object) name (params) (return type)
+
+// Value comment blablabla
 func (t *Trade) Value() float64 {
 	value := float64(t.Volume) * t.Price
 	if t.Buy {
