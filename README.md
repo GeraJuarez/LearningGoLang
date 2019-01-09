@@ -8,3 +8,4 @@ Some files might not compile or run the main as intended, most of the files are 
 * Go has grabage collector.
 * `defers` functions are pushed into a stack.
 * Everything that starts with uppercase letter is accesible from other packages, otherwise, only from within the current package.
+* For objects, Go uses structs and functions as methods and as constructors
