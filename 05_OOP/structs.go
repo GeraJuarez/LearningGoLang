@@ -11,6 +11,18 @@ type Trade struct {
 	Buy    bool
 }
 
+// method for structs:
+// same as a function but with a recevier (pointer of the object)
+// func (pointer of object) name (params) (return type)
+func (t *Trade) Value() float64 {
+	value := float64(t.Volume) * t.Price
+	if t.Buy {
+		value = -value // not necessary to understand the body of this method
+	}
+
+	return value
+}
+
 func main() {
 	t1 := Trade{"MSFT", 10, 99.98, true}
 	fmt.Println(t1)
@@ -33,4 +45,13 @@ func main() {
 
 	// In go, everythin that starts with Uppercase letter is accesible from other packages,
 	// otherwise, only form within the current package
+
+	// use method
+	fmt.Println(t1.Value())
+
+	// for methods that modify the struct/object:
+	// * pointer recevver is needed and the used object must be a pointer
+	// example:
+	t4 := &Trade{}
+	t4.Value() // imagine this method changes an atribute
 }
