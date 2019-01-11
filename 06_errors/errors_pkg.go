@@ -10,6 +10,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Config blah blah blah
 type Config struct {
 	// configuration fields here
 }
