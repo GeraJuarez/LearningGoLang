@@ -18,7 +18,7 @@ func returnType(url string) {
 	fmt.Printf("%s : %s\n", url, ctype)
 }
 
-func main() {
+func main2() {
 	urls := []string{
 		"https://url1.com",
 		"https://url2.com",
