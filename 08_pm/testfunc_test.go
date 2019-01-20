@@ -49,3 +49,16 @@ func TestMany(t *testing.T) {
 		})
 	}
 }
+
+// Benchmarking and profiling
+// For run benchmark: 'go test -v -bench .' (all benchmarks) [-run NonExistentTest] (run only benchmarks)
+// For profiling: 'go test -v -bench . -run AAA -cpuprofile-prof.out
+// Use go tool pprof prof.out
+func BenchmarkSqrt(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_, err := Sqrt(float64(i))
+		if err != nil {
+			b.Fatal(err)
+		}
+	}
+}
